@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <div class="form-control">
+                <label for="login-id">Username / Phone Number / Gmail</label>
+                <input type="text" id="login-id" placeholder="Enter username, phone, or email" required>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+            <button class="btn" type="submit">Login</button>
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const loginId = document.getElementById('login-id').value;
+            const password = document.getElementById('password').value;
+
+            if (loginId === "" || password === "") {
+                alert("Please fill in all fields.");
+            } else {
+                console.log(`Logging in with: ${loginId}, ${password}`);
+
+                window.location.href = "index.html"; 
+            }
+        });
+    </script>
+</body>
+</html>
